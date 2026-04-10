@@ -98,6 +98,13 @@
 
         // Tự động ẩn sau 4 giây nếu mạng quá chậm để người dùng không bị kẹt ở màn hình cam
         setTimeout(hideSplash, 4000);
+        // Hiện thông báo hướng dẫn cài đặt trên iPhone
+if (window.navigator.standalone === false && /iPhone|iPad|iPod/.test(window.navigator.userAgent)) {
+    setTimeout(function() {
+        alert("Để dùng như App: Nhấn nút 'Chia sẻ' bên dưới -> 'Thêm vào MH chính' nhé!");
+    }, 5000); // Hiện sau 5 giây khi vào trang
+}
     </script>
+
 </body>
 </html>
