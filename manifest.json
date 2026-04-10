@@ -1,0 +1,15 @@
+{
+  "short_name": "Shopee Link KM",
+  "name": "Chuyển Link Shopee Khuyến Mãi",
+  "icons": [
+    {
+      "src": "hhttps://lh3.googleusercontent.com/d/1csoDKIXdXyWLYeUrTeucwRbb_YLJxqux",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ee4d2d",
+  "display": "standalone",
+  "theme_color": "#ee4d2d"
+}
