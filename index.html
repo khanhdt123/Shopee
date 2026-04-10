@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <title>Chuyển Link Shopee Khuyến Mãi</title>
+
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#ee4d2d">
     
     <meta name="apple-mobile-web-app-title" content="Shopee Link KM">
     <meta name="mobile-web-app-capable" content="yes">
@@ -85,25 +88,27 @@
     </div>
 
     <script>
-        // Ẩn màn hình chào sau khi nội dung đã tải xong
         function hideSplash() {
             const splash = document.getElementById('splash');
             if (splash) {
                 splash.style.opacity = '0';
-                setTimeout(() => {
-                    splash.style.display = 'none';
-                }, 500);
+                setTimeout(() => { splash.style.display = 'none'; }, 500);
             }
         }
 
-        // Tự động ẩn sau 4 giây nếu mạng quá chậm để người dùng không bị kẹt ở màn hình cam
         setTimeout(hideSplash, 4000);
-        // Hiện thông báo hướng dẫn cài đặt trên iPhone
-if (window.navigator.standalone === false && /iPhone|iPad|iPod/.test(window.navigator.userAgent)) {
-    setTimeout(function() {
-        alert("Để dùng như App: Nhấn nút 'Chia sẻ' bên dưới -> 'Thêm vào MH chính' nhé!");
-    }, 5000); // Hiện sau 5 giây khi vào trang
-}
+
+        // Logic nhắc nhở cài đặt tối ưu cho iPhone
+        window.addEventListener('load', function() {
+            const isIos = /iPhone|iPad|iPod/.test(navigator.userAgent);
+            const isStandalone = window.navigator.standalone === true;
+
+            if (isIos && !isStandalone) {
+                setTimeout(() => {
+                    alert("📢 Mẹo dùng như App:\n1. Nhấn nút 'Chia sẻ' (hình vuông mũi tên lên)\n2. Chọn 'Thêm vào MH chính'\nĐể truy cập nhanh từ màn hình điện thoại nhé!");
+                }, 3000);
+            }
+        });
     </script>
 
 </body>
